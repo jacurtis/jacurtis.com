@@ -5,15 +5,13 @@ const activeClass = "bg-base-300"; // For primary color replace with `active` cl
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
     <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-    <li><a class="py-3 text-base" id="services" href="/services">Digital Garden</a></li>
-    <li><a class="py-3 text-base" id="store" href="/store">Stream of Consciousness</a></li>
-    <li><a class="py-3 text-base" id="blog" href="/blog">Sofa Chronicles</a></li>
+    <li><a class="py-3 text-base" id="blog" href="/blog">Blog</a></li>
     <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li>
     <li><a class="py-3 text-base" id="cv" href="/hire">Hire Me</a></li>
-    <li><a class="py-3 text-base" id="connect" href="/connect">Connect with Me</a></li>
+    <li><a class="py-3 text-base" id="connect" href="/connect">Connect</a></li>
 </ul>
 
 <script define:vars={{ sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass }}>
-const activeItemElem = document.getElementById(sideBarActiveItemID);
-activeItemElem && activeItemElem.classList.add(activeClass);
+    const activeItemElem = document.getElementById(sideBarActiveItemID);
+    activeItemElem && activeItemElem.classList.add(activeClass);
 </script>
