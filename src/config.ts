@@ -3,3 +3,5 @@
 
 export const SITE_TITLE = 'J. Alexander Curtis | Infrastructure Engineer & Cybersecurity Expert';
 export const SITE_DESCRIPTION = 'Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed.';
+
+export const SITE_HEADER = 'Alex Curtis ⚡️'
