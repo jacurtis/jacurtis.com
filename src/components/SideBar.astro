@@ -2,21 +2,27 @@
 import SideBarFooter from "./SideBarFooter.astro";
 import { Image } from "@astrojs/image/components";
 import SideBarMenu from "./SideBarMenu.astro";
+import NameSigntature from "./NameSigntature.astro";
 const { sideBarActiveItemID } = Astro.props;
 ---
 
 <div class="drawer-side z-40">
   <label for="my-drawer" class="drawer-overlay"></label>
   <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col">
-    <div class="w-fit mx-auto mt-5 mb-6">
-      <a href="/">
-        <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
-          <div class="w-[8.5rem]">
-            <Image class="mask mask-circle" aspectRatio="1:1" format="webp" width={300} height={300} src="/profile.png" alt="Profile image" />
+    <div class="avatar-name-group mb-6">
+      <div class="w-fit mx-auto mt-5">
+        <a href="/">
+          <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
+            <div class="w-[8.5rem]">
+              <Image class="border-cyan-600 border-2 rounded-full" aspectRatio="1:1" format="webp" width={300} height={300} src="/profile.png" alt="Profile image" />
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
+      <NameSigntature name="Alex Curtis" signature="J. Alexander Curtis"/>
     </div>
+
+
     <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
     <SideBarFooter />
   </aside>
