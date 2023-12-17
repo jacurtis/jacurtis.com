@@ -1,0 +1,41 @@
+---
+import '@fontsource/kristi';
+
+const {name, signature} = Astro.props;
+---
+
+<div class="name">
+    <h3>
+        <span>
+            {signature}
+            <span class="front">{name}</span>
+        </span>
+    </h3>
+</div>
+
+<style>
+    h3 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .name span {
+        position: relative;
+        font-style: italic;
+        font-family: 'Kristi', cursive;
+        color: rgba(19, 15, 73, 0.07);
+        font-size: 50px;
+    }
+
+    .name .front {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #130F49;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+</style>
