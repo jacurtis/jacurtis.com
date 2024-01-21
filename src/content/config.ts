@@ -1,5 +1,5 @@
 import { z, defineCollection } from "astro:content";
-const blogSchema = z.object({
+const noteSchema = z.object({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
@@ -9,6 +9,16 @@ const blogSchema = z.object({
     tags: z.array(z.string()).refine(items => new Set(items).size === items.length, {
         message: 'tags must be unique',
     }).optional(),
+});
+
+const wikiSchema = z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    updatedDate: z.string().optional(),
+    tags: z.array(z.string()).refine(items => new Set(items).size === items.length, {
+        message: 'tags must be unique'
+    }).optional()
 });
 
 const storeSchema = z.object({
@@ -24,13 +34,16 @@ const storeSchema = z.object({
     heroImage: z.string().optional(),
 });
 
-export type BlogSchema = z.infer<typeof blogSchema>;
+export type NoteSchema = z.infer<typeof noteSchema>;
+export type WikiSchema = z.infer<typeof wikiSchema>;
 export type StoreSchema = z.infer<typeof storeSchema>;
 
-const blogCollection = defineCollection({ schema: blogSchema });
+const noteCollection = defineCollection({ schema: noteSchema });
+const wikiCollection = defineCollection({schema: wikiSchema });
 const storeCollection = defineCollection({ schema: storeSchema });
 
 export const collections = {
-    'blog': blogCollection,
+    'notes': noteCollection,
+    'wiki': wikiCollection,
     'store': storeCollection
 }
