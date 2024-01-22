@@ -4,7 +4,7 @@ import HorizontalCard from "../../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
-  const posts = await getCollection("notes");
+  const posts = await getCollection("wiki");
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   return paginate(posts, { pageSize: 10 });
 }
@@ -14,14 +14,18 @@ const { page } = Astro.props;
 
 <BaseLayout title="Blog" sideBarActiveItemID="blog">
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Notes</div>
+    <div class="text-3xl w-full font-bold">Wiki</div>
   </div>
-
+  <h1 class="text-6xl font-bold mb-4">🚧</h1>
+  <p class="text-lg py-2">
+    There is nothing here yet. I am still working on building out the Wiki.<br/> Please bookmark this page and visit it again later.
+  </p>
+  <!--
   {
     page.data.length === 0 ? (
       <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
         <p class="font-bold">Sorry!</p>
-        <p>There are no notes to show at the moment. Check back later!</p>
+        <p>There are no Wikis to show at the moment. Check back later!</p>
       </div>
     ) : (
       <ul>
@@ -31,9 +35,8 @@ const { page } = Astro.props;
               title={post.data.title}
               img={post.data.heroImage}
               desc={post.data.description}
-              url={"/notes/" + post.slug}
+              url={"/wiki/" + post.slug}
               target="_self"
-              badge={post.data.badge}
               tags={post.data.tags}
             />
             <div class="divider my-0" />
@@ -42,6 +45,7 @@ const { page } = Astro.props;
       </ul>
     )
   }
+  -->
 
   <div class="flex justify-between">
     {

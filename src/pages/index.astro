@@ -12,21 +12,25 @@ const last_posts = posts.slice(0, 3);
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
     <div class="text-5xl font-bold">I'm J. <u>Alex</u>ander <u>Curtis</u></div>
-    <div class="text-3xl py-3 font-bold">Infrastructure Engineer & Cybersecurity Expert</div>
+    <div class="text-3xl py-3 font-bold">Cloud Architect & Cybersecurity Expert</div>
     <div class="py-2">
       <p class="text-lg py-2">
         This is my <b>Slice of the Internet</b> where I collect, explore, and post my thoughts, while also providing updates
         those that are interesting in following what I am up to.
       </p>
       <p class="text-lg py-2">
-        My digital garden is where I tend to my most important thoughts and explorations. My stream of consciousness is
+        My latest updates can be found under notes, where I write quick updates on what I am doing and where I am writing each day.
+        These updates are fast and quick, and you can consider subscribing to this feed via RSS.
+      </p>
+      <p class="text-lg py-2">
+        My wiki is a digital garden where I tend to my most important thoughts and explorations. My stream of consciousness is
         simply the latest short thoughts I have had, without any special editing. They are ephemeral in nature, similar
         to what you might find on Twitter, Mastodon, or Threads (follow me there).
       </p>
-      <p class="text-lg py-2">
-        Finally, the Sofa Chronicles are where I review some books, movies, and games I have played recently and dive
-        deeper into their meaning
-      </p>
+      <!--<p class="text-lg py-2">-->
+      <!--  Finally, the Sofa Chronicles are where I review some books, movies, and games I have played recently and dive-->
+      <!--  deeper into their meaning-->
+      <!--</p>-->
     </div>
     <div class="mt-8">
       <a class="btn" href="/connect" target="_self">Let's connect!</a>
@@ -37,9 +41,10 @@ const last_posts = posts.slice(0, 3);
     </div>
   </div>
 
+  <!-- NOTES SECTION -->
   <div class="sec-blog mt-2">
     <div>
-      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest Notes</div>
     </div>
 
     {
@@ -58,6 +63,9 @@ const last_posts = posts.slice(0, 3);
       ))
     }
   </div>
+
+  <!-- PROJECT SECTION -->
+  <!--
   <div class="sec-projects mt-12">
     <div>
       <div class="text-3xl w-full font-bold mt-5 mb-5">My last projects {"</>"}</div>
@@ -86,4 +94,5 @@ const last_posts = posts.slice(0, 3);
         badge="FOSS"
     />
   </div>
+  -->
 </BaseLayout>
