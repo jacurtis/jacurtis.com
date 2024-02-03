@@ -17,7 +17,9 @@
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.3",
     "@fontsource/kristi": "^5.0.18",
+    "@iconify-json/ri": "^1.1.19",
     "astro": "^4.0.6",
+    "astro-icon": "^1.1.0",
     "daisyui": "^3.2.1",
     "dayjs": "^1.11.9",
     "sharp": "^0.32.5"
