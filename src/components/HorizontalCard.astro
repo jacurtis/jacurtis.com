@@ -1,4 +1,5 @@
 ---
+import Tag from "./Tag.astro";
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
@@ -29,9 +30,10 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
           {
             tags &&
               tags.map((tag) => (
-                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
-                  {tag}
-                </a>
+                <!--<a href={`${tag_url}/${tag}`} class="badge badge-outline">-->
+                <!--  {tag}-->
+                <!--</a>-->
+                  <Tag tag={tag} ></Tag>
               ))
           }
         </div>
