@@ -1,3 +1,12 @@
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
+
+.tooltip {
+    background-color: #1f2937;
+    color: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
+    @apply pointer-events-none absolute -top-10 left-0 w-max opacity-0 transition-opacity group-hover:opacity-100;
+}
