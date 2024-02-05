@@ -3,7 +3,7 @@ title: "Building my Blog with Astro"
 slug: "building-my-blog-with-astro"
 description: "This website is built with Astro, a new static site generator. Here are my thoughts on the experience."
 pubDate: "Feb 2 2024"
-heroImage: "/img/notes/2024-02-02-featured-astro-coder.png"
+heroImage: "/img/notes/2024-02-02-featured-astro-coder.webp"
 tags: ["astro", "coding"]
 ---
 
