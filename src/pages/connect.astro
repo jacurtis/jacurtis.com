@@ -1,12 +1,38 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
-// import HorizontalCard from "../components/HorizontalCard.astro";
-// import { getCollection } from "astro:content";
+import ContactCard from "../components/ContactCard.astro";
 
-// const posts = (await getCollection("notes")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-//
-// const last_posts = posts.slice(0, 3);
+const contacts = [
+    {
+        icon: "ri:mail-unread-fill",
+        title: "Email",
+        description: "Contact me at",
+        linkText: "hello@jacurtis.com",
+        linkUrl: "#"
+    },
+    {
+        icon: "ri:mastodon-fill",
+        title: "Mastadon",
+        description: "Fun, Quirky, Casual, and Frequent",
+        linkText: "jacurtis@mastodon.social",
+        linkUrl: "https://mastodon.social/@jacurtis"
+    },
+    {
+        icon: "ri:linkedin-box-fill",
+        title: "LinkedIn",
+        description: "Professional network updates",
+        linkText: "jalexandercurtis",
+        linkUrl: "https://www.linkedin.com/in/jalexandercurtis/"
+    },
+    {
+        icon: "ri:github-fill",
+        title: "Github",
+        description: "Commits and Contributions",
+        linkText: "@jacurtis",
+        linkUrl: "https://github.com/jacurtis"
+    }
+];
 ---
 
 <BaseLayout sideBarActiveItemID="connect">
@@ -24,30 +50,15 @@ import { Icon } from "astro-icon/components";
 
         <div class="pt-8">
             <div class="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-2">
-                <div class="flex flex-col items-center gap-3 px-8 py-10 bg-white rounded-3xl drop-shadow-lg">
-                    <Icon name="ri:mail-unread-fill" size="48" class="text-indigo-600"/>
-                    <p class="text-2xl font-extrabold text-dark-grey-900">Email</p>
-                    <p class="text-base leading-7 text-dark-grey-600">Contact me at</p>
-                    <a class="text-lg font-bold text-purple-blue-500">hello@jacurtis.com</a>
-                </div>
-                <div class="flex flex-col items-center gap-3 px-8 py-10 bg-white rounded-3xl drop-shadow-lg">
-                    <Icon name="ri:mastodon-fill" size="48" class="text-indigo-600"/>
-                    <p class="text-2xl font-extrabold text-dark-grey-900">Mastadon</p>
-                    <p class="text-base leading-7 text-dark-grey-600">Fun, Quirky, Casual, and Frequent</p>
-                    <a class="text-lg font-bold text-purple-blue-500" href="https://mastodon.social/@jacurtis">jacurtis@mastadon.social</a>
-                </div>
-                <div class="flex flex-col items-center gap-3 px-8 py-10 bg-white rounded-3xl drop-shadow-lg">
-                    <Icon name="ri:linkedin-box-fill" size="48" class="text-indigo-600"/>
-                    <p class="text-2xl font-extrabold text-dark-grey-900">LinkedIn</p>
-                    <p class="text-base leading-7 text-dark-grey-600">Professional network updates</p>
-                    <a class="text-lg font-bold text-purple-blue-500" target="_blank" href="https://www.linkedin.com/in/jalexandercurtis/">jalexandercurtis</a>
-                </div>
-                <div class="flex flex-col items-center gap-3 px-8 py-10 bg-white rounded-3xl drop-shadow-lg">
-                    <Icon name="ri:github-fill" size="48" class="text-indigo-600"/>
-                    <p class="text-2xl font-extrabold text-dark-grey-900">Github</p>
-                    <p class="text-base leading-7 text-dark-grey-600">Commits and Contributions</p>
-                    <a class="text-lg font-bold text-purple-blue-500" target="_blank" href="https://github.com/jacurtis">@jacurtis</a>
-                </div>
+                { contacts.map((contact) => (
+                        <ContactCard
+                                icon={ contact.icon }
+                                title={ contact.title }
+                                description={ contact.description }
+                                linkText={ contact.linkText }
+                                linkUrl={ contact.linkUrl }
+                        />
+                ))}
             </div>
         </div>
     </div>
