@@ -1,0 +1,10 @@
+---
+interface Props {
+    href: string;
+    target?: string;
+}
+
+const {target= "_self", href} = Astro.props;
+---
+
+<a href={href} target={target ? target : "_self"} class="text-blue-500 underline cursor-pointer"><slot/></a>

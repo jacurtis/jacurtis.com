@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
+import Link from "../components/Link.astro";
 
 const posts = (await getCollection("notes")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
@@ -19,13 +20,14 @@ const last_posts = posts.slice(0, 3);
         those that are interesting in following what I am up to.
       </p>
       <p class="text-lg py-2">
-        My latest updates can be found under notes, where I write quick updates on what I am doing and where I am writing each day.
-        These updates are fast and quick, and you can consider subscribing to this feed via RSS.
+        My latest updates can be found under <Link href="/notes">Notes</Link>, where I write quick updates
+        on what I am doing and where I am writing each day. These updates are fast and quick, and you can consider
+        subscribing to this <Link href="/rss.xml" target="_self">Feed via RSS</Link>.
       </p>
       <p class="text-lg py-2">
-        My wiki is a digital garden where I tend to my most important thoughts and explorations. My stream of consciousness is
-        simply the latest short thoughts I have had, without any special editing. They are ephemeral in nature, similar
-        to what you might find on Twitter, Mastodon, or Threads (follow me there).
+        My <Link href="/wiki">Wiki</Link> is a digital garden where I tend to my most important thoughts
+        and explorations. These are curated and detailed guides of interesting topics I have been exploring. You can also
+        <Link href="/connect">connect with me</Link> by following me on Mastodon, Twitter, LinkedIn, and GitHub.
       </p>
       <!--<p class="text-lg py-2">-->
       <!--  Finally, the Sofa Chronicles are where I review some books, movies, and games I have played recently and dive-->
