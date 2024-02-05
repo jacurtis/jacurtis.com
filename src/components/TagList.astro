@@ -1,0 +1,10 @@
+---
+import Tag from "./Tag.astro";
+const { tags } = Astro.props;
+---
+
+<ul class="my-2 p-0 leading-tight">
+  {tags.map((tag) => (
+    <Tag tag={tag} />
+  ))}
+</ul>
