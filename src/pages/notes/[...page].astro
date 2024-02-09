@@ -4,7 +4,9 @@ import HorizontalCard from "../../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
-  const posts = await getCollection("notes");
+  const posts = await getCollection('notes', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  });
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   return paginate(posts, { pageSize: 10 });
 }
