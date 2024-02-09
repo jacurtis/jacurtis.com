@@ -4,7 +4,10 @@ import { NoteSchema } from "../../content/config";
 import PostLayout from "../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
-  const postEntries = await getCollection("notes");
+  const postEntries = await getCollection('notes', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  });
+  // const postEntries = await getCollection("notes");
   return postEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
