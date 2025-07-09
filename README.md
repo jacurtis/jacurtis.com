@@ -169,9 +169,9 @@ The BaseLayout defines a general template for each new webpage you want to add. 
 
 ### Content
 
-You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
+You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at content.config.ts.
 
-#### config.ts
+#### content.config.ts
 
 Where you need to define your content collections, we define our content schemas too.
 
