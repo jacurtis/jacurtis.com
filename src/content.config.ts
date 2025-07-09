@@ -1,4 +1,6 @@
 import { z, defineCollection } from "astro:content";
+import { glob } from 'astro/loaders';
+
 const noteSchema = z.object({
     title: z.string(),
     description: z.string(),
@@ -40,7 +42,10 @@ export type NoteSchema = z.infer<typeof noteSchema>;
 export type WikiSchema = z.infer<typeof wikiSchema>;
 export type StoreSchema = z.infer<typeof storeSchema>;
 
-const noteCollection = defineCollection({ schema: noteSchema });
+const noteCollection = defineCollection({
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/notes" }),
+    schema: noteSchema
+});
 const wikiCollection = defineCollection({schema: wikiSchema });
 const storeCollection = defineCollection({ schema: storeSchema });
 
