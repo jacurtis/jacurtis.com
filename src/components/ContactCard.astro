@@ -1,9 +1,9 @@
 ---
 import {Icon} from "astro-icon/components";
-const {icon, title, description, linkText, linkUrl} = Astro.props
+const {icon, title, description, linkText, linkUrl, className} = Astro.props
 ---
 
-<div class="flex flex-col items-center gap-3 px-8 py-10 bg-white rounded-3xl drop-shadow-lg">
+<div class={`flex flex-col items-center gap-3 px-8 py-10 bg-white rounded-3xl drop-shadow-lg ${className}`}>
     <Icon name={icon} size="48" class="text-indigo-600"/>
     <p class="text-2xl font-extrabold text-dark-grey-900">{title}</p>
     <p class="text-base leading-7 text-dark-grey-600">{description}</p>

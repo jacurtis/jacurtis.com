@@ -5,11 +5,11 @@ import ContactCard from "../components/ContactCard.astro";
 
 const contacts = [
     {
-        icon: "ri:mail-unread-fill",
-        title: "Email",
-        description: "Contact me at",
-        linkText: "hello@jacurtis.com",
-        linkUrl: "#"
+        icon: "ri:bluesky-fill",
+        title: "Bluesky",
+        description: "Intellectual, Thoughtful, and Engaging",
+        linkText: "jacurtis.bsky.social",
+        linkUrl: "https://bsky.app/profile/jacurtis.bsky.social"
     },
     {
         icon: "ri:mastodon-fill",
@@ -31,6 +31,13 @@ const contacts = [
         description: "Commits and Contributions",
         linkText: "@jacurtis",
         linkUrl: "https://github.com/jacurtis"
+    },
+    {
+        icon: "ri:mail-unread-fill",
+        title: "Email",
+        description: "Contact me at",
+        linkText: "hello@jacurtis.com",
+        linkUrl: "#"
     }
 ];
 ---
@@ -50,13 +57,14 @@ const contacts = [
 
         <div class="pt-8">
             <div class="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-2">
-                { contacts.map((contact) => (
+                { contacts.map((contact, idx) => (
                         <ContactCard
                                 icon={ contact.icon }
                                 title={ contact.title }
                                 description={ contact.description }
                                 linkText={ contact.linkText }
                                 linkUrl={ contact.linkUrl }
+                                className={idx === contacts.length - 1 ? "md:col-span-2" : ""}
                         />
                 ))}
             </div>

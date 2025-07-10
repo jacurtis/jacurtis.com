@@ -27,7 +27,7 @@ const last_posts = posts.slice(0, 3);
       <p class="text-lg py-2">
         My <Link href="/wiki">Wiki</Link> is a digital garden where I tend to my most important thoughts
         and explorations. These are curated and detailed guides of interesting topics I have been exploring. You can also
-        <Link href="/connect">connect with me</Link> by following me on Mastodon, Twitter, LinkedIn, and GitHub.
+        <Link href="/connect">connect with me</Link> by following me on Bluesky, Mastodon, LinkedIn, and GitHub.
       </p>
       <!--<p class="text-lg py-2">-->
       <!--  Finally, the Sofa Chronicles are where I review some books, movies, and games I have played recently and dive-->
@@ -56,7 +56,7 @@ const last_posts = posts.slice(0, 3);
                 title={post.data.title}
                 img={post.data.heroImage}
                 desc={post.data.description}
-                url={"/notes/" + post.slug}
+                url={"/notes/" + post.id}
                 target="_self"
                 badge={post.data.badge}
             />
