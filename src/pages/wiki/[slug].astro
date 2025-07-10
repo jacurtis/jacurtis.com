@@ -1,23 +1,23 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
-import { NoteSchema } from "../../content.config";
+import { CollectionEntry, getCollection, render } from "astro:content";
+import { WikiSchema } from "../../content.config";
 import PostLayout from "../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
-  const postEntries = await getCollection("notes");
+  const postEntries = await getCollection("wiki");
   return postEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 interface Props {
-  entry: CollectionEntry<"notes">;
+  entry: CollectionEntry<"wiki">;
 }
 
 const { entry } = Astro.props;
-const post: NoteSchema = entry.data;
-const { Content } = await entry.render();
+const post: WikiSchema = entry.data;
+const { Content } = await render(entry);
 ---
 
 <PostLayout
