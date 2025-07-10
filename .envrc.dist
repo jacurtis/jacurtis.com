@@ -1,0 +1,11 @@
+export CLAUDE_CODE_USE_BEDROCK=1
+export AWS_PROFILE=claudecode
+export AWS_REGION=us-east-2
+
+if [[ -n "$CLAUDE_CODE_MODEL_ID" ]]; then
+  export ANTHROPIC_MODEL="arn:aws:bedrock:us-east-2:463110443458:application-inference-profile/$CLAUDE_CODE_MODEL_ID"
+fi
+
+if [[ -n "$CLAUDE_CODE_SMALL_MODEL_ID" ]]; then
+  export ANTHROPIC_SMALL_FAST_MODEL="arn:aws:bedrock:us-east-2:463110443458:application-inference-profile/$CLAUDE_CODE_SMALL_MODEL_ID"
+fi

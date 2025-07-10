@@ -1,0 +1,2 @@
+export ANTHROPIC_MODEL="arn:aws:bedrock:us-east-2:463110443458:application-inference-profile/khiosl79rrka"
+export ANTHROPIC_SMALL_FAST_MODEL="arn:aws:bedrock:us-east-2:463110443458:application-inference-profile/fv9wkemvui95"
