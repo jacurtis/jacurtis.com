@@ -1,280 +1,190 @@
-# Astrofy | Personal Portfolio Website Template
+# J. Alexander Curtis - Personal Portfolio
 
-![Astrofy | Personal Porfolio Website Template](public/social_img.png)
+A modern personal portfolio website built with Astro v5, featuring a blog, digital garden, and professional showcase. This is the personal website of J. Alexander Curtis, Cloud Architect & Cybersecurity Expert.
 
-Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with a Blog, CV, Project Section, Store, and RSS Feed.
+🌐 **Live Site:** [jacurtis.com](https://jacurtis.com)
 
-## Demo
+## ✨ Features
 
-View a live demo of [Astrofy](https://astrofy-template.netlify.app/)
+- **📝 Notes**: Quick updates and daily thoughts with RSS feed
+- **🌱 Wiki**: Digital garden for curated knowledge and explorations
+- **🛍️ Store**: Showcase of projects and offerings
+- **📱 Responsive Design**: Mobile-first approach with Tailwind CSS
+- **🎨 Modern UI**: Clean design with DaisyUI components
+- **🔍 SEO Optimized**: Built-in sitemap and meta tags
+- **⚡ Fast Performance**: Static site generation with Astro
+- **📊 Content Collections**: Type-safe content management
 
-## Installation
+## 🚀 Quick Start
 
-Run the following command in your terminal
+### Prerequisites
 
-```bash
-npm install
+- Node.js 22.0.0 or higher
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/jacurtis/jacurtis.com.git
+   cd jacurtis.com
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Visit `http://localhost:4321` to see the site
+
+## 📝 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build locally |
+| `npm run astro` | Run Astro CLI commands |
+
+## 🏗️ Project Structure
+
 ```
-
-Once the packages are installed you are ready to run astro. Astro comes with a built-in development server that has everything you need for project development. The astro dev command will start the local development server so that you can see your new website in action for the very first time.
-
-```bash
-npm run dev
-```
-
-## Tech Stack
-
-- [Astro](https://astro.build)
-- [tailwindcss](https://tailwindcss.com/)
-- [DaisyUI](https://daisyui.com/)
-
-## Project Structure
-
-```php
+/
+├── public/              # Static assets
 ├── src/
-│   ├── components/
-│   │   ├── cv/
-│   │   │   ├── TimeLine
-│   │   ├── BaseHead.astro
-│   │   ├── Card.astro
-│   │   ├── Footer.astro
-│   │   ├── Header.astro
-│   │   └── HorizontalCard.astro
-│   │   └── SideBar.astro
-│   │   └── SideBarMenu.astro
-│   │   └── SideBarFooter.astro
-│   ├── content/
-│   │   ├── blog/
-│   │   │   ├── post1.md
-│   │   │   ├── post2.md
-│   │   │   └── post3.md
-│   │   ├── store/
-│   │   │   ├── item1.md
-│   │   │   ├── item2.md
-│   ├── layouts/
-│   │   └── BaseLayout.astro
-│   │   └── PostLayout.astro
-│   └── pages/
-│   │   ├── blog/
-│   │   │   ├── [...page].astro
-│   │   │   ├── [slug].astro
-│   │   └── cv.astro
-│   │   └── index.astro
-│   │   └── projects.astro
-│   │   └── rss.xml.js
-│   └── styles/
-│       └── global.css
-├── public/
-│   ├── favicon.svg
-│   └── social-image.png
-│   └── sprofile.jpg
-│   └── social_img.webp
-├── astro.config.mjs
-├── tailwind.config.cjs
-├── package.json
-└── tsconfig.json
+│   ├── components/      # Reusable UI components
+│   ├── content/         # Content collections
+│   │   ├── notes/       # Blog posts and updates
+│   │   ├── wiki/        # Digital garden entries
+│   │   └── store/       # Project showcase
+│   ├── layouts/         # Page layouts
+│   ├── pages/           # Route pages
+│   └── content.config.ts # Content collection schemas
+├── astro.config.mjs     # Astro configuration
+└── package.json
 ```
 
-### Components usage
+## 📚 Content Management
 
-#### Layout Components
+### Adding Notes
+Create new markdown files in `src/content/notes/` with frontmatter:
 
-The `BaseHead`, `Footer`, `Header`, and `SideBar` components are already included in the layout system. To change the website content you can edit the content of these components.
-
-##### SideBar
-
-In the Sidebar you can change your profilePicture, links to all your website pages, and your social icons.
-
-You can change your avatar shape using [mask classes](https://daisyui.com/components/mask/).
-
-The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack. You can replace the icons in the `SideBarFooter` component
-
-To add a new page in the sidebar go to the `SideBarMenu` component.
-
-```
-<li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-
-```
-
-**Note**: In order to change the sidebar menu's active item, you need to setup the prop `sideBarActiveItemID` in the `BaseLayout` component of your new page and add that id to the link in the `SideBarMenu`
-
-#### TimeLine
-
-The timeline components are used to confirm the CV.
-
-```html
-<div class="time-line-container">
-  <TimeLineElement title="Element Title" subtitle="Subtitle">
-    Content that can contain
-    <div>divs</div>
-    and <span>anything else you want</span>.
-  </TimeLineElement>
-  ...
-</div>
-```
-
-#### Card & HorizontalCard
-
-The cards are primarly used for the Project and the Blog components. They include a picture, a title, and a description. 
-
-```html
-<HorizontalCard title="Card Title" img="imge_url" desc="Description" url="Link
-URL" target="Optional link target (_blank default)" badge="Optional badge"
-tags={['Array','of','tags']} />
-```
-
-#### HorizontalCard Shop Item
-
-
-This component is already included in the Store layout of the template. In case you want to use it in another place these are the props.
-
-```html
-<HorizontalShopItem
-  title="Item Title"
-  img="imge_url"
-  desc="Item description"
-  pricing="current_price"
-  oldPricing="old_price"
-  checkoutUrl="external store checkout url"
-  badge="Optional badge"
-  url="item details url"
-  custom_link="Custom link url"
-  custom_link_label="Cutom link btn label"
-  target="Optional link target (_self default)"
-/>
-```
-
-#### Adding a Custom Component
-
-To add a custom component, you can create a .astro file in the components folder under the source folder. 
-
-Components must follow this template. The ```---``` represents the code fence and uses Javascript and can be used for imports. 
-
-The HTML component is the actual style of your new component. 
-
-```html
+```yaml
 ---
-// Component Script (JavaScript)
+title: "Your Note Title"
+description: "Brief description"
+pubDate: 2024-01-01
+tags: ["tag1", "tag2"]
+draft: false
 ---
-<!-- Component Template (HTML + JS Expressions) -->
+
+Your content here...
 ```
 
-For more details, see the [astro components](https://docs.astro.build/en/core-concepts/astro-components/) documentation here. 
+### Adding Wiki Entries
+Create markdown files in `src/content/wiki/` with:
 
-### Layouts
-
-Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
-
-The BaseLayout defines a general template for each new webpage you want to add. It imports constants SITE_TITLE and SITE_DESCRIPTION which can be modified in the ```../config``` folder. Data placed there can be imported anywhere using import. 
-
-### Content
-
-You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at content.config.ts.
-
-#### content.config.ts
-
-Where you need to define your content collections, we define our content schemas too.
-
-#### Blog
-
-Add your `md` blog post in the `/content/blog/` folder.
-
-##### Post format
-
-Add code with this format in the top of each post file.
-
-```
+```yaml
 ---
-title: "Post Title"
-description: "Description"
-pubDate: "Post date format(Sep 10 2022)"
-heroImage: "Post Hero Image URL"
+title: "Knowledge Entry"
+description: "What this covers"
+pubDate: 2024-01-01
+tags: ["knowledge", "reference"]
 ---
+
+Detailed content...
 ```
 
-### Pages
+### Adding Store Items
+Create files in `src/content/store/` with:
 
-#### Blog
-
-Blog uses Astro's content collection to query post's `md`.
-
-##### [page].astro
-
-The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
-
-##### [slug].astro
-
-The `[slug].astro` is the base route for every blog post, you can customize the page layout or behaviour, by default uses `content/blog` for content collection and `PostLayout` as layout.
-
-#### Shop
-
-Add your `md` item in the `/pages/shop/` folder.
-
-##### [page].astro
-
-The `[page].astro` is the route to work with the paginated item list. You can change there the number of items listed for each page and the pagination button labels. The shop will render all `.md` files you include inside this folder.
-
-##### Item format
-
-Add code with this format at the top of each item file.
-
-```js
+```yaml
 ---
-title: "Demo Item 1"
-description: "Item description"
-heroImage: "Item img url"
-details: true // show or hide details btn
-custom_link_label: "Custom btn link label"
-custom_link: "Custom btn link"
-pubDate: "Sep 15 2022"
-pricing: "$15"
-oldPricing: "$25.5"
-badge: "Featured"
-checkoutUrl: "https://checkouturl.com/"
+title: "Project Name"
+description: "Project description"
+pricing: "$99"
+updatedDate: 2024-01-01
+custom_link_label: "View Project"
+custom_link: "https://example.com"
 ---
+
+Project details...
 ```
 
-#### Static pages
+## 🎨 Customization
 
-The other pages included in the template are static pages. The `index` page belongs to the root page. You can add your pages directly in the `/pages` folder and then add a link to those pages in the `sidebar` component.
+### Site Configuration
+Update site constants in `src/content.config.ts`:
 
-Feel free to modify the content included in the pages that the template contains or add the ones you need.
+```typescript
+export const SITE_TITLE = 'Your Name';
+export const SITE_DESCRIPTION = 'Your description';
+export const SITE_HEADER = 'Welcome message';
+```
 
-### Theming
+### Styling
+- Built with Tailwind CSS and DaisyUI
+- Theme can be changed in `src/layouts/BaseLayout.astro`
+- Custom styles in component files
 
-To change the template theme change the `data-theme` attribute of the `<html>` tag in `BaseLayout.astro` file.
+### Icons
+Uses `astro-icon` with Iconify icons. Add new icons:
 
-You can choose among 30 themes available or create your custom theme. See themes available [here](https://daisyui.com/docs/themes/).
+```astro
+<Icon name="ri:github-fill" />
+```
 
-## Sitemap
+## 🚀 Deployment
 
-The Sitemap is generated automatically when you build your website in the root of the domain. Please update the `robots.txt` file in the public folder with your site name URL for the Sitemap.
+### Cloudflare Pages
+This site is optimized for Cloudflare Pages deployment:
 
-## Deploy
+1. Connect your GitHub repository to Cloudflare Pages
+2. Build settings are automatically detected
+3. Node.js version is specified in `.nvmrc` (22.10.0)
 
-You can deploy your site on your favourite static hosting service such as Vercel, Netlify, GitHub Pages, etc.
+### Other Platforms
+The site can be deployed to any static hosting platform:
 
-The configuration for the deployment varies depending on the platform where you are going to do it. See the [official Astro information](https://docs.astro.build/en/guides/deploy/) to deploy your website.
+- Vercel
+- Netlify  
+- GitHub Pages
+- AWS S3
 
-> **⚠️ CAUTION** </br>
-> The Blog pagination of this template is implemented using dynamic route parameters in its filename and for now this format is incompatible with SSR deploy configs, so please use the default static deploy options for your deployments.
+## 🛠️ Tech Stack
 
-## Contributing
+- **Framework**: [Astro v5](https://astro.build/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) + [DaisyUI](https://daisyui.com/)
+- **Content**: MDX with content collections
+- **Icons**: [Astro Icon](https://github.com/natemoo-re/astro-icon) + Iconify
+- **Typography**: [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
+- **RSS**: [@astrojs/rss](https://docs.astro.build/en/guides/rss/)
+- **Sitemap**: [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 
-Suggestions and pull requests are welcomed! Feel free to open a discussion or an issue for a new feature request or bug.
+## 📄 License
 
-One of the best ways to contribute is to grab a [bug report or feature suggestion](https://github.com/manuelernestog/astrofy/issues) that has been marked `accepted` and dig in.
+This project is open source and available under the MIT License.
 
-Please be wary of working on issues _not_ marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
+## 🤝 Contributing
 
-## License
+This is a personal portfolio, but suggestions and improvements are welcome! Feel free to:
 
-Astrofy is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astrofy/blob/main/LICENSE) file for details.
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
 
-## Contributors
+## 📞 Contact
 
-<a href="https://github.com/manuelernestog/astrofy/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=manuelernestog/astrofy" />
-</a>
+- **Website**: [jacurtis.com](https://jacurtis.com)
+- **GitHub**: [@jacurtis](https://github.com/jacurtis)
+- **LinkedIn**: [J. Alexander Curtis](https://linkedin.com/in/jacurtis)
 
-Made with [contrib.rocks](https://contrib.rocks).
+---
+
+Built with ❤️ using Astro and deployed on Cloudflare Pages.
