@@ -49,7 +49,7 @@ metadata. It is that easy!
 
 ### 2. Add Draft to the Content Collection Interface [Typescript]
 
-If you are using TypeScript, you will need to add the `draft` field to the `Content` interface in `src/content/config.ts`.
+If you are using TypeScript, you will need to add the `draft` field to the `Content` interface in `src/content/content.config.ts`.
 
 ```ts
 import { z, defineCollection } from "astro:content";
