@@ -1,9 +1,9 @@
 ---
-title: "Demo Post 1"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 10 2022"
+title: "Anxiety: A Comprehensive Guide"
+description: "The hidden dissease that affects millions, everyone is afraid to admit and talk about, plus how to deal with it."
+pubDate: "July 10 2025"
 heroImage: "/post_img.webp"
-tags: ["tokio"]
+tags: ["anxiety", "mental health"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
